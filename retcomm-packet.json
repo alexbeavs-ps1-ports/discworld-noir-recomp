@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "discworld-noir-psx",
+  "name": "Discworld Noir",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "discworld-noir-recomp",
+  "rom_identity": {
+    "crc32": [
+      "78b46286"
+    ],
+    "md5": [
+      "24b87b82470996b9f0bbe374188d39b2"
+    ],
+    "sha1": [
+      "86c295f6b8cf4a62173a83645f6c1d7a2f94c8bc"
+    ],
+    "disc_serials": [
+      "SLES-01549"
+    ],
+    "sizes": [
+      737302608
+    ],
+    "filenames": [
+      "Discworld Noir (Europe) (En,Es,It).cue",
+      "Discworld Noir (Europe) (En,Es,It).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "disc_fps": [
+      "8c5bea0cbef5447a33b34dcd2399a664189b8867a0fe3e5b10f54f74812ce3d0"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH5552.BIN",
+    "profile": "SCPH5552",
+    "crc32": [
+      "d786f0b9"
+    ],
+    "md5": [
+      "32736f17079d0b2b7024407c39bd3050"
+    ],
+    "sha1": [
+      "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0"
+    ],
+    "sha256": [
+      "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH5552.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/discworld-noir-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "discworld-noir-*-windows-x64.zip",
+      "linux-x64": "discworld-noir-*-linux-x64.zip",
+      "macos-arm64": "discworld-noir-*-macos-arm64.zip",
+      "macos-x64": "discworld-noir-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "discworld_noir.exe",
+    "linux": "discworld_noir",
+    "macos": "discworld_noir"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/discworld-noir-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}

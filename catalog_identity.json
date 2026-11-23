@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Discworld Noir",
+    "id": "SLES-01549",
+    "boot_exe": "SLES_015.49"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "Europe",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Discworld Noir (Europe) (En,Es,It).cue",
+    "bin_name": "Discworld Noir (Europe) (En,Es,It).bin",
+    "track_counts": [
+      1
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 737302608,
+      "md5": "24b87b82470996b9f0bbe374188d39b2",
+      "sha1": "86c295f6b8cf4a62173a83645f6c1d7a2f94c8bc",
+      "crc32": "78b46286"
+    },
+    "disc_fp": "8c5bea0cbef5447a33b34dcd2399a664189b8867a0fe3e5b10f54f74812ce3d0"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x8006C424",
+    "text_size": "0x00087800",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 1610,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [
+    "cue has only 1 TRACK — Track-01-only dumps fail multi-track netplay/catalog gates; prefer a full Redump cue."
+  ],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}

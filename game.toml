@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Discworld Noir"
+id = "SLES-01549"
+players = 1
+exe = "disc/SLES_015.49"
+disc = "disc/Discworld Noir (Europe) (En,Es,It).cue"
+discs = ["disc/Discworld Noir (Europe) (En,Es,It).cue"]
+disc_serials = ["SLES-01549"]
+load_address = "0x80010000"
+entry_pc = "0x8006C424"
+text_size = "0x00087800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Discworld Noir (Europe) (En,Es,It).bin"
+cue_name = "Discworld Noir (Europe) (En,Es,It).cue"
+boot_exe = "SLES_015.49"
+known_sizes = [737302608]
+known_md5 = [
+  "24b87b82470996b9f0bbe374188d39b2",
+]
+known_sha1 = [
+  "86c295f6b8cf4a62173a83645f6c1d7a2f94c8bc",
+]
+known_crc32 = [
+  "78b46286",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Discworld Noir Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "8c5bea0cbef5447a33b34dcd2399a664189b8867a0fe3e5b10f54f74812ce3d0"
